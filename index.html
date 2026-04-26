@@ -20,7 +20,7 @@
 <link rel="icon" type="image/png" href="assets/favicon-v3.png?v=1" />
 <link rel="apple-touch-icon" href="assets/favicon-v3.png?v=1" />
 <link rel="preload" as="image" href="assets/seal-v3-gold.png" fetchpriority="high" />
-<link rel="preload" as="image" href="assets/wordmark-v3-gold.png" fetchpriority="high" />
+<link rel="preload" as="image" href="assets/wordmark-v3-gold.png?v=2" fetchpriority="high" />
 <link rel="preload" as="video" href="assets/hero-video.mp4" type="video/mp4" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -317,6 +317,27 @@
     .pubs-grid{grid-template-columns:1fr;gap:20px}
   }
 
+  /* ========= DEPOIMENTOS (sobre vídeo livros) ========= */
+  .testi-banner{display:flex;align-items:center;justify-content:center;gap:28px;margin:0 auto 56px;padding:22px 36px;background:rgba(250,246,236,.05);border:1px solid rgba(212,175,55,.28);backdrop-filter:blur(10px);max-width:620px}
+  .testi-banner-num{font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:500;font-size:54px;line-height:1;color:var(--gold-l)}
+  .testi-banner-stars{font-size:22px;letter-spacing:.18em;color:var(--gold);text-shadow:0 0 12px rgba(212,175,55,.45)}
+  .testi-banner-meta{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:14.5px;color:#e7d9b3;line-height:1.45;flex:1;min-width:0}
+  .testi-banner-meta strong{color:var(--gold-l);font-weight:500;font-style:normal}
+
+  .testi-card{display:flex;flex-direction:column;gap:18px}
+  .testi-stars{font-size:14px;letter-spacing:.22em;color:var(--gold-l);text-shadow:0 0 8px rgba(212,175,55,.3)}
+  .testi-card .testi-quote{font-family:'Cormorant Garamond',serif;font-weight:400;font-style:italic;font-size:18.5px;line-height:1.55;color:#fff;margin:0;flex:1}
+  .testi-card .testi-quote::before{content:"\201C";color:var(--gold-l);opacity:.55;font-size:42px;line-height:0;margin-right:6px;vertical-align:-14px;font-family:'Cormorant Garamond',serif;font-style:normal}
+  .testi-foot{margin-top:auto;padding-top:18px;border-top:1px solid rgba(212,175,55,.2);display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap}
+  .testi-name{font-family:'Cinzel',serif;font-size:11px;letter-spacing:.24em;color:var(--gold-l);text-transform:uppercase;font-weight:500}
+  .testi-meta{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:13px;color:#a0aac0}
+
+  @media(max-width:900px){
+    .testi-banner{flex-direction:column;gap:14px;text-align:center;padding:22px 24px}
+    .testi-banner-num{font-size:46px}
+    .testi-card .testi-quote{font-size:17px}
+  }
+
   /* ========= ONDE ATENDO (vídeo prédios bg) ========= */
   .where{position:relative;overflow:hidden;color:var(--cream);padding:160px 0;min-height:780px}
   .where-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;filter:saturate(.7) brightness(.6)}
@@ -431,6 +452,243 @@
 
   /* ========= UTILS ========= */
   .text-center{text-align:center}
+
+  /* =====================================================================
+     MOBILE — refinamentos progressivos (780 / 600 / 480 / 360)
+     ===================================================================== */
+
+  /* Padding-bottom global pra FAB não cobrir conteúdo */
+  @media(max-width:780px){
+    body{padding-bottom:88px}
+  }
+
+  /* ===== ≤780px (tablets pequenos + mobile grande) ===== */
+  @media(max-width:780px){
+    .wrap{padding:0 22px}
+    .nav-inner{padding:0 22px;gap:10px}
+    .nav.scrolled{padding:8px 0}
+    .brand-seal{height:44px;width:44px}
+    .brand-wordmark{height:26px}
+    .nav-cta{padding:8px 14px;font-size:9.5px;letter-spacing:.18em;gap:6px}
+    .nav-cta svg{width:11px;height:11px}
+
+    /* Sections */
+    .section,.office,.areas,.about,.pubs,.where,.contact{padding:96px 0}
+    .shead{margin-bottom:48px}
+    .shead-eye{font-size:10px;letter-spacing:.4em;gap:10px}
+    .shead-eye::before,.shead-eye::after{width:22px}
+    .shead h2{font-size:clamp(28px,7vw,36px);line-height:1.18}
+    .shead-sub{font-size:15px}
+    .flourish{margin-top:18px}
+
+    /* HERO — tagline entra no fluxo, sem absoluto */
+    .hero{height:auto;min-height:100vh;padding:120px 0 100px;flex-direction:column}
+    .hero-logo{flex-direction:column;gap:24px;padding:0 24px;width:100%}
+    .hero-divider{width:140px;height:1px;background:linear-gradient(90deg,transparent,rgba(212,175,55,.85),transparent)}
+    .hero-seal{width:180px;height:180px}
+    .hero-wordmark{max-width:280px}
+    .hero-tagline{position:static;transform:none;margin:36px auto 0;padding:0 24px;width:auto}
+    .hero-tagline-line{font-size:10px;letter-spacing:.4em;margin-bottom:12px}
+    .hero-tagline-line span{padding:0 10px}
+    .hero-tagline-line span::before,.hero-tagline-line span::after{width:28px}
+    .hero-tagline-quote{font-size:16px;line-height:1.55}
+    .hero-tagline-quote br{display:none}
+    .hero-scroll{position:static;transform:none;margin:36px auto 0;display:flex}
+    .hero-frame{top:14px;left:14px;right:14px;bottom:14px}
+    .hero-corner{width:44px;height:44px}
+    .hero-corner.tl,.hero-corner.tr{top:24px}
+    .hero-corner.tl{left:24px}.hero-corner.tr{right:24px}
+    .hero-corner.bl,.hero-corner.br{bottom:24px}
+    .hero-corner.bl{left:24px}.hero-corner.br{right:24px}
+    .hero-stars{opacity:.25;background-size:140px 140px}
+
+    /* OFFICE */
+    .office-text h2{font-size:clamp(26px,6.5vw,32px)}
+    .office-text p{font-size:15px;line-height:1.7}
+    .office-pillars{grid-template-columns:1fr 1fr;gap:14px;margin-top:30px}
+    .pillar{padding:16px 0}
+    .pillar-title{font-size:10px;letter-spacing:.18em}
+    .pillar-text{font-size:13px}
+    .office-photo-img{height:380px}
+    .office-photo-frame{padding:12px}
+    .office-photo-stamp{width:64px;height:64px;font-size:8px;letter-spacing:.14em;top:-12px;left:-12px;padding:6px}
+    .office-photo-caption{font-size:9.5px;letter-spacing:.22em;padding:14px 18px;bottom:-22px;right:-6px}
+
+    /* AREAS */
+    .areas::before{display:none}
+    .area-card{padding:32px 24px}
+    .area-card h3{font-size:24px}
+    .area-icon{width:54px;height:54px;margin-bottom:18px}
+    .area-icon svg{width:24px;height:24px}
+    .area-card p{font-size:14px;line-height:1.65}
+    .area-tag{font-size:8.5px;letter-spacing:.16em;padding:5px 9px}
+    .area-arrow{bottom:28px;right:28px}
+    .area-arrow svg{width:18px;height:18px}
+
+    /* ABOUT */
+    .about{padding:110px 0}
+    .about-text h2{font-size:clamp(28px,6.8vw,38px)}
+    .about-text .lead{font-size:18px;line-height:1.5;padding-left:16px;margin-bottom:22px}
+    .about-text p{font-size:15px;line-height:1.7}
+    .about-photo-bg,.about-photo-circle{width:300px;height:300px}
+    .about-photo{width:260px}
+    .about-watermark{width:420px}
+    .credential-num{font-size:32px}
+    .credential-label{font-size:9px;letter-spacing:.2em}
+
+    /* PUBS */
+    .pubs{padding:110px 0}
+    .pub-card{padding:30px 24px}
+    .pub-card h3{font-size:22px;line-height:1.28}
+    .pub-card p{font-size:13.5px;line-height:1.65}
+    .pub-card-tag{font-size:9px;letter-spacing:.22em;padding:4px 8px}
+    .pub-card-link{font-size:9px;letter-spacing:.24em}
+    .pubs-cta{margin-top:44px}
+    .ghost-btn{font-size:10px;letter-spacing:.32em;padding:14px 28px;gap:10px}
+
+    /* WHERE */
+    .where{padding:110px 0;min-height:0}
+    .where-text h2{font-size:clamp(26px,6.5vw,34px)}
+    .where-text .lead{font-size:17px;line-height:1.5;margin-bottom:22px}
+    .where-text p{font-size:14px;line-height:1.7}
+    .where-locations{gap:14px;margin-top:30px}
+    .loc{padding:16px 18px}
+    .loc-name{font-size:10px;letter-spacing:.2em}
+    .loc-detail{font-size:14px}
+    .where-photo-img{height:340px}
+    .where-photo-frame{padding:10px}
+    .where-photo-tag{font-size:9px;letter-spacing:.22em;padding:10px 16px;left:-14px;top:24px}
+
+    /* CONTACT */
+    .contact{padding:110px 0}
+    .contact-grid{gap:48px}
+    .contact-info h3,.contact-form h3{font-size:24px}
+    .contact-info p{font-size:15px;margin-bottom:24px}
+    .contact-channels{margin-top:26px}
+    .channel{padding:18px 0;gap:16px}
+    .channel-icon{width:42px;height:42px}
+    .channel-icon svg{width:16px;height:16px}
+    .channel-label{font-size:9px;letter-spacing:.22em}
+    .channel-value{font-size:16px;line-height:1.35}
+    .channel-value em{display:block;font-size:13px;margin-top:2px}
+    .contact-form{padding:32px 22px}
+    .form-row label{font-size:9px;letter-spacing:.2em}
+    .form-row input,.form-row textarea,.form-row select{padding:12px 14px;font-size:14px}
+    .form-submit{font-size:10px;letter-spacing:.32em;padding:16px 26px;gap:10px}
+
+    /* FOOTER */
+    .footer{padding:60px 0 30px}
+    .footer-grid{margin-bottom:44px;gap:36px}
+    .footer-brand img{height:44px;width:44px}
+    .footer-brand-wm{height:26px;width:auto!important}
+    .footer-tag{font-size:14px;max-width:none}
+    .footer h4{font-size:10px;letter-spacing:.24em;margin-bottom:16px}
+    .footer-links a{font-size:13px}
+    .footer-contact{font-size:14.5px}
+    .footer-contact strong{font-size:12px}
+    .footer-bottom{padding-top:24px;font-size:11px}
+    .footer-bottom-right{font-size:9px;letter-spacing:.22em}
+
+    /* WhatsApp FAB — menor + mais discreto */
+    .wa-fab{width:52px;height:52px;bottom:18px;right:18px;box-shadow:0 8px 22px rgba(37,211,102,.45)}
+    .wa-fab svg{width:24px;height:24px}
+  }
+
+  /* ===== ≤480px (mobile padrão) ===== */
+  @media(max-width:480px){
+    .wrap{padding:0 18px}
+    .nav-inner{padding:0 18px}
+    .nav{padding:14px 0}
+    .nav.scrolled{padding:8px 0}
+    .brand-seal{height:38px;width:38px}
+    .brand-wordmark{display:none} /* só selo na nav, libera espaço pro CTA */
+    .nav-cta{padding:7px 12px;font-size:9px;letter-spacing:.16em}
+    .nav-cta svg{width:10px;height:10px}
+    .nav-burger{padding:8px}
+    .nav-burger svg{width:22px;height:22px}
+
+    .section,.office,.areas,.about,.pubs,.where,.contact{padding:80px 0}
+    .shead{margin-bottom:40px}
+    .shead h2{font-size:clamp(24px,7.4vw,30px);line-height:1.2}
+    .shead-sub{font-size:14px}
+
+    .hero{padding:104px 0 84px}
+    .hero-seal{width:150px;height:150px}
+    .hero-wordmark{max-width:240px}
+    .hero-tagline-quote{font-size:15px}
+    .hero-corner{width:36px;height:36px}
+    .hero-frame{top:10px;left:10px;right:10px;bottom:10px}
+
+    .office-grid,.about-grid,.where-grid,.contact-grid{gap:42px}
+    .office-text h2,.about-text h2,.where-text h2{font-size:clamp(22px,6.6vw,28px);line-height:1.22}
+    .office-text p,.about-text p,.where-text p{font-size:14.5px}
+    .office-pillars{grid-template-columns:1fr;gap:0}
+    .pillar{padding:14px 0}
+    .pillar:first-child{border-top:0}
+    .office-photo-img{height:340px}
+
+    .area-card{padding:28px 22px}
+    .area-card h3{font-size:22px}
+    .area-num{font-size:10px;letter-spacing:.32em}
+
+    .about-photo-bg,.about-photo-circle{width:260px;height:260px}
+    .about-photo{width:230px}
+    .about-watermark{width:340px;opacity:.03}
+    .about-text .lead{font-size:16.5px}
+
+    .pub-card{padding:26px 20px}
+    .pub-card h3{font-size:20px}
+
+    .where-photo-img{height:300px}
+    .where-photo-tag{left:-10px;font-size:8.5px;padding:9px 14px}
+    .where-locations{grid-template-columns:1fr}
+
+    .contact-form{padding:28px 18px}
+    .contact-info h3,.contact-form h3{font-size:22px}
+
+    .footer-tag{font-size:13.5px}
+    .footer-contact{font-size:14px}
+
+    .wa-fab{width:48px;height:48px;bottom:14px;right:14px}
+    .wa-fab svg{width:22px;height:22px}
+  }
+
+  /* ===== ≤360px (smartphones pequenos / antigos) ===== */
+  @media(max-width:360px){
+    .wrap{padding:0 14px}
+    .nav-inner{padding:0 14px}
+    .brand-seal{height:34px;width:34px}
+    .nav-cta{padding:6px 10px;font-size:8.5px;letter-spacing:.14em}
+    .hero-seal{width:130px;height:130px}
+    .hero-wordmark{max-width:210px}
+    .hero-tagline-quote{font-size:14px;line-height:1.55}
+    .hero-tagline-line{font-size:9px;letter-spacing:.32em}
+    .hero-tagline-line span{padding:0 6px}
+    .hero-tagline-line span::before,.hero-tagline-line span::after{width:18px}
+    .shead h2{font-size:clamp(22px,7.6vw,26px)}
+    .office-photo-img,.where-photo-img{height:280px}
+    .area-card{padding:24px 18px}
+    .area-card h3,.pub-card h3{font-size:19px}
+    .about-photo-bg,.about-photo-circle{width:230px;height:230px}
+    .about-photo{width:210px}
+  }
+
+  /* ===== Hero alto-baixo (paisagem mobile / telas curtas) ===== */
+  @media(max-height:680px) and (max-width:780px){
+    .hero{padding:90px 0 70px}
+    .hero-seal{width:140px;height:140px}
+    .hero-wordmark{max-width:240px}
+    .hero-tagline{margin-top:26px}
+    .hero-scroll{margin-top:24px}
+  }
+
+  /* ===== TOUCH-FRIENDLY: hover em desktop apenas ===== */
+  @media(hover:none){
+    .area-card:hover{transform:none;box-shadow:none;border-color:var(--line)}
+    .pub-card:hover{transform:none}
+    .channel:hover{padding-left:0}
+    .wa-fab-label{display:none}
+  }
 </style>
 </head>
 <body data-auto-reveal="all" data-scroll-progress>
@@ -440,7 +698,7 @@
   <div class="nav-inner">
     <a href="#top" class="brand" aria-label="Breno Lima Advocacia">
       <img class="brand-seal" src="assets/seal-v3-gold.png" alt="Selo Breno Lima Advocacia" width="54" height="54" />
-      <img class="brand-wordmark" src="assets/wordmark-v3-gold.png" alt="Breno Lima Advocacia" />
+      <img class="brand-wordmark" src="assets/wordmark-v3-gold.png?v=2" alt="Breno Lima Advocacia" />
     </a>
     <button class="nav-burger" aria-label="Abrir menu" aria-expanded="false" aria-controls="nav-links-menu" id="navBurger">
       <svg viewBox="0 0 26 26" aria-hidden="true">
@@ -453,7 +711,7 @@
       <a href="#escritorio">O Escritório</a>
       <a href="#areas">Áreas</a>
       <a href="#sobre">Quem Sou</a>
-      <a href="#publicacoes">Conteúdo</a>
+      <a href="#depoimentos">Depoimentos</a>
       <a href="#onde">Onde Atendo</a>
       <a href="#contato">Contato</a>
     </div>
@@ -481,7 +739,7 @@
   <div class="hero-logo">
     <img class="hero-seal" src="assets/seal-v3-gold.png" alt="Selo heráldico Breno Lima Advocacia" width="280" height="280" fetchpriority="high" />
     <div class="hero-divider" aria-hidden="true"></div>
-    <img class="hero-wordmark" src="assets/wordmark-v3-gold.png" alt="Breno Lima Advocacia" fetchpriority="high" />
+    <img class="hero-wordmark" src="assets/wordmark-v3-gold.png?v=2" alt="Breno Lima Advocacia" fetchpriority="high" />
   </div>
 
   <div class="hero-tagline">
@@ -639,8 +897,8 @@
   </div>
 </section>
 
-<!-- ============= PUBLICAÇÕES & CONTEÚDO (vídeo livros) ============= -->
-<section class="pubs" id="publicacoes">
+<!-- ============= DEPOIMENTOS (vídeo livros) ============= -->
+<section class="pubs" id="depoimentos">
   <video class="pubs-video" autoplay muted loop playsinline preload="metadata">
     <source src="assets/books-video.mp4" type="video/mp4" />
   </video>
@@ -648,36 +906,71 @@
   <div class="pubs-grain"></div>
   <div class="wrap">
     <div class="shead" data-reveal="up">
-      <div class="shead-eye"><span>Conteúdo · Publicações</span></div>
-      <h2>Estudo, escrita e <em>partilha do que se aprende</em>.</h2>
-      <p class="shead-sub">Notas, comentários e textos sobre temas que aparecem no dia a dia da prática — escritos para clientes, colegas e curiosos do Direito.</p>
+      <div class="shead-eye"><span>Depoimentos · Avaliações Google</span></div>
+      <h2>O que dizem os <em>clientes do escritório</em>.</h2>
+      <p class="shead-sub">Depoimentos reais de pessoas atendidas pelo escritório — utilizados com autorização, em conformidade com o Código de Ética da OAB.</p>
     </div>
-    <div class="pubs-grid" data-stagger="> .pub-card" data-stagger-step="140" data-reveal="up">
-      <article class="pub-card">
-        <span class="pub-card-tag">Previdenciário</span>
-        <div class="pub-card-date">Em breve</div>
-        <h3>Quando o INSS nega: <em>os três passos</em> antes de entrar com ação</h3>
-        <p>Um guia rápido de leitura sobre como ler a carta de indeferimento, o que protocolar primeiro e o que <em>nunca</em> fazer antes de procurar advogado.</p>
-        <a href="#contato" class="pub-card-link">Em desenvolvimento <svg viewBox="0 0 20 20"><path d="M3 10 L17 10"/><path d="M11 4 L17 10 L11 16"/></svg></a>
+
+    <div class="testi-banner" data-reveal="up" data-delay="100">
+      <div class="testi-banner-num">5,0</div>
+      <div class="testi-banner-stars" aria-hidden="true">★★★★★</div>
+      <div class="testi-banner-meta">Excelente · com base em <strong>57 avaliações</strong> no Google</div>
+    </div>
+
+    <div class="pubs-grid testi-grid" data-stagger="> .pub-card" data-stagger-step="120" data-reveal="up">
+      <article class="pub-card testi-card">
+        <div class="testi-stars" aria-hidden="true">★★★★★</div>
+        <p class="testi-quote">Dr. Breno é um excelente profissional, trabalho de muita qualidade e uma atenção especial ao cliente. Super honesto e sempre procura ajudar da melhor forma possível. Eu recomendo!</p>
+        <div class="testi-foot">
+          <div class="testi-name">Weslley Lucas</div>
+          <div class="testi-meta">há 3 anos · Google</div>
+        </div>
       </article>
-      <article class="pub-card">
-        <span class="pub-card-tag">Sucessões</span>
-        <div class="pub-card-date">Em breve</div>
-        <h3>Inventário extrajudicial: <em>quando vale a pena</em>, quando não</h3>
-        <p>Comparativo prático entre cartório e juízo, com critérios objetivos para escolher o caminho mais rápido — e mais barato — para a família.</p>
-        <a href="#contato" class="pub-card-link">Em desenvolvimento <svg viewBox="0 0 20 20"><path d="M3 10 L17 10"/><path d="M11 4 L17 10 L11 16"/></svg></a>
+      <article class="pub-card testi-card">
+        <div class="testi-stars" aria-hidden="true">★★★★★</div>
+        <p class="testi-quote">Maravilhoso, Adv. Breno Lima, muito atencioso, tirou todas as minhas dúvidas. Excelente profissional, tem me ajudado e vai me ajudar muito ainda. Recomendarei para todas as pessoas que conheço.</p>
+        <div class="testi-foot">
+          <div class="testi-name">Samuel Veríssimo</div>
+          <div class="testi-meta">há 1 ano · Google</div>
+        </div>
       </article>
-      <article class="pub-card">
-        <span class="pub-card-tag">Trabalhista</span>
-        <div class="pub-card-date">Em breve</div>
-        <h3>Acordo na Justiça do Trabalho: <em>o que se ganha</em> e o que se abre mão</h3>
-        <p>Por que tantas conciliações fecham com valor menor que o devido — e que provas, planejadas antes, mudam essa equação a favor do trabalhador.</p>
-        <a href="#contato" class="pub-card-link">Em desenvolvimento <svg viewBox="0 0 20 20"><path d="M3 10 L17 10"/><path d="M11 4 L17 10 L11 16"/></svg></a>
+      <article class="pub-card testi-card">
+        <div class="testi-stars" aria-hidden="true">★★★★★</div>
+        <p class="testi-quote">Fui bem atendido, com muita paciência e agilidade. Meu caso foi resolvido com êxito. Minha nota é 10, parabéns e abraço.</p>
+        <div class="testi-foot">
+          <div class="testi-name">Fernando Barros</div>
+          <div class="testi-meta">há 2 anos · Google</div>
+        </div>
+      </article>
+      <article class="pub-card testi-card">
+        <div class="testi-stars" aria-hidden="true">★★★★★</div>
+        <p class="testi-quote">Ótimo atendimento. As recepcionistas receberam eu e meu marido muito bem. O advogado é super atencioso e tirou todas as nossas dúvidas. Recomendo!</p>
+        <div class="testi-foot">
+          <div class="testi-name">Geovania Silva</div>
+          <div class="testi-meta">há 1 ano · Google</div>
+        </div>
+      </article>
+      <article class="pub-card testi-card">
+        <div class="testi-stars" aria-hidden="true">★★★★★</div>
+        <p class="testi-quote">Pontual, comunicativo e muito paciente. Profissional ímpar, dono de uma inteligência ímpar. Super indico.</p>
+        <div class="testi-foot">
+          <div class="testi-name">Evandro Santos</div>
+          <div class="testi-meta">há 2 anos · Google</div>
+        </div>
+      </article>
+      <article class="pub-card testi-card">
+        <div class="testi-stars" aria-hidden="true">★★★★★</div>
+        <p class="testi-quote">Foi a primeira vez que precisei de um advogado, e vou dizer que foi uma experiência muito boa. Fui muito bem atendida, estou satisfeita pelo atendimento.</p>
+        <div class="testi-foot">
+          <div class="testi-name">Adailza Palmeira</div>
+          <div class="testi-meta">há 2 anos · Google</div>
+        </div>
       </article>
     </div>
+
     <div class="pubs-cta" data-reveal="up" data-delay="240">
-      <a class="ghost-btn" href="https://wa.me/5581984089609?text=Ol%C3%A1%2C%20Dr.%20Breno.%20Quero%20receber%20os%20conte%C3%BAdos%20por%20WhatsApp." target="_blank" rel="noopener">
-        Receber conteúdos pelo WhatsApp
+      <a class="ghost-btn" href="https://www.google.com/search?q=Breno+Lima+Advocacia+Cabo+de+Santo+Agostinho" target="_blank" rel="noopener">
+        Ver todas as 57 avaliações no Google
         <svg viewBox="0 0 20 20"><path d="M3 10 L17 10"/><path d="M11 4 L17 10 L11 16"/></svg>
       </a>
     </div>
@@ -819,7 +1112,7 @@
       <div>
         <div class="footer-brand">
           <img src="assets/seal-v3-gold.png" alt="" width="54" height="54" />
-          <img class="footer-brand-wm" src="assets/wordmark-v3-gold.png" alt="Breno Lima Advocacia" />
+          <img class="footer-brand-wm" src="assets/wordmark-v3-gold.png?v=2" alt="Breno Lima Advocacia" />
         </div>
         <div class="footer-tag">Atendimento direto, análise minuciosa e cuidado artesanal — para causas Cíveis, Previdenciárias, Trabalhistas e de Sucessões.</div>
       </div>
@@ -829,7 +1122,7 @@
           <a href="#escritorio">O Escritório</a>
           <a href="#areas">Áreas de Atuação</a>
           <a href="#sobre">Quem Sou</a>
-          <a href="#publicacoes">Conteúdo</a>
+          <a href="#depoimentos">Depoimentos</a>
           <a href="#onde">Onde Atendo</a>
           <a href="#contato">Contato</a>
         </div>

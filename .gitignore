@@ -1,5 +1,6 @@
 node_modules/
 _check-screenshots/
+_screenshot_check.py
 *.log
 .DS_Store
 Thumbs.db
