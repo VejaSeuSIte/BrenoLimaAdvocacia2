@@ -689,6 +689,93 @@
     .channel:hover{padding-left:0}
     .wa-fab-label{display:none}
   }
+
+  /* ========= QUIZ DE ORIENTAÇÃO (dentro de .office) ========= */
+  .quiz-divider{display:flex;align-items:center;justify-content:center;margin:96px 0 56px;gap:18px;color:var(--gold-d)}
+  .quiz-divider::before,.quiz-divider::after{content:"";flex:0 0 80px;height:1px;background:currentColor;opacity:.45}
+  .quiz-diamond{width:6px;height:6px;background:currentColor;transform:rotate(45deg);opacity:.85}
+
+  .quiz-head{text-align:center;max-width:760px;margin:0 auto 44px}
+  .quiz-head .shead-eye{justify-content:center;color:var(--gold-d)}
+  .quiz-head h2{text-align:center;font-family:'Cormorant Garamond',serif;font-weight:500;font-size:clamp(34px,4vw,50px);line-height:1.16;color:var(--ink);margin-bottom:16px;letter-spacing:-.005em}
+  .quiz-head h2 em{font-style:italic;color:var(--gold-d);font-weight:500}
+  .quiz-head .quiz-sub{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:18px;color:var(--gray);max-width:560px;margin:0 auto;line-height:1.55}
+
+  .quiz{background:#fbf9f0;border:1px solid var(--line);max-width:760px;margin:0 auto;padding:48px 44px;position:relative;overflow:hidden;min-height:420px}
+  .quiz::before{content:"";position:absolute;top:0;left:0;width:100%;height:3px;background:linear-gradient(90deg,var(--gold-d),var(--gold),var(--gold-d));z-index:1}
+  .quiz-progress{position:absolute;top:3px;left:0;right:0;height:2px;background:var(--cream-2);z-index:1}
+  .quiz-progress::after{content:"";position:absolute;inset:0;background:var(--gold);transform-origin:left;transform:scaleX(var(--qp,.33));transition:transform .5s cubic-bezier(.22,.8,.24,1)}
+  .quiz-step{display:none;animation:vs-fadeUp .5s cubic-bezier(.22,.8,.24,1)}
+  .quiz-step.active{display:block}
+  .quiz-step-num{font-family:'Cinzel',serif;font-size:10px;letter-spacing:.32em;text-transform:uppercase;color:var(--gold-d);font-weight:600;margin-bottom:14px}
+  .quiz-step h3{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:28px;color:var(--ink);margin-bottom:28px;line-height:1.22;letter-spacing:-.005em}
+  .quiz-opts{display:grid;gap:12px}
+  .quiz-opt{display:flex;align-items:center;gap:14px;padding:18px 22px;background:#fff;border:1px solid var(--line);cursor:pointer;transition:all .25s;text-align:left;font-family:'Inter',sans-serif;font-size:14.5px;font-weight:400;color:var(--ink-soft);width:100%;position:relative}
+  .quiz-opt:hover{border-color:var(--gold);background:var(--cream);transform:translateX(4px);box-shadow:0 8px 20px rgba(168,134,50,.08)}
+  .quiz-opt-ico{width:38px;height:38px;background:var(--cream-2);color:var(--navy-2);display:grid;place-items:center;flex-shrink:0;transition:all .25s}
+  .quiz-opt:hover .quiz-opt-ico{background:var(--navy-2);color:var(--gold-l)}
+  .quiz-opt svg{width:18px;height:18px}
+  .quiz-opt::after{content:"→";margin-left:auto;color:var(--gold-d);font-size:18px;transition:all .25s;font-family:'Cormorant Garamond',serif;font-weight:500;flex-shrink:0}
+  .quiz-opt:hover::after{color:var(--navy-2);transform:translateX(4px)}
+  .quiz-back{background:none;border:none;color:var(--navy-2);font-family:'Cinzel',serif;font-size:10px;font-weight:600;letter-spacing:.24em;text-transform:uppercase;cursor:pointer;padding:8px 0;margin-bottom:18px;display:inline-flex;align-items:center;gap:8px}
+  .quiz-back:hover{color:var(--gold-d)}
+  .quiz-result{display:none;animation:vs-fadeUp .6s cubic-bezier(.22,.8,.24,1);text-align:center;padding-top:8px}
+  .quiz-result.active{display:block}
+  .quiz-result-head{margin-bottom:22px}
+  .quiz-result-head svg{width:56px;height:56px;color:var(--gold);margin-bottom:14px;stroke:currentColor;fill:none;stroke-width:1.6}
+  .quiz-result h3{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:32px;color:var(--ink);margin-bottom:12px;line-height:1.2}
+  .quiz-result h3 em{font-style:italic;color:var(--gold-d)}
+  .quiz-result p{font-family:'Cormorant Garamond',serif;font-style:italic;color:var(--gray);font-size:16.5px;line-height:1.7;margin-bottom:30px;max-width:520px;margin-left:auto;margin-right:auto;font-weight:400}
+  .quiz-result-cta{display:inline-flex;align-items:center;gap:14px;background:var(--green-wa);color:#fff;padding:18px 34px;font-family:'Cinzel',serif;font-size:11px;letter-spacing:.32em;text-transform:uppercase;font-weight:600;box-shadow:0 14px 28px rgba(37,211,102,.36);transition:all .25s;border:0;cursor:pointer}
+  .quiz-result-cta:hover{background:var(--green-wa-d);transform:translateY(-2px);box-shadow:0 18px 36px rgba(37,211,102,.46)}
+  .quiz-result-cta svg{width:18px;height:18px;fill:currentColor}
+
+  @media(max-width:780px){
+    .quiz-divider{margin:64px 0 40px}
+    .quiz-divider::before,.quiz-divider::after{flex:0 0 50px}
+    .quiz{padding:36px 26px;min-height:auto}
+    .quiz-step h3{font-size:23px;margin-bottom:22px}
+    .quiz-step-num{font-size:9px;letter-spacing:.28em}
+    .quiz-opt{padding:14px 18px;font-size:13.5px;gap:12px}
+    .quiz-opt-ico{width:34px;height:34px}
+    .quiz-result h3{font-size:26px}
+    .quiz-result p{font-size:15.5px}
+    .quiz-result-cta{padding:15px 26px;font-size:10px;letter-spacing:.26em}
+  }
+
+  /* ========= FAQ ========= */
+  .faq-section{position:relative;padding:160px 0;background:var(--cream-2);overflow:hidden}
+  .faq-watermark{position:absolute;top:50%;right:-220px;transform:translateY(-50%);width:640px;height:auto;opacity:.05;pointer-events:none;z-index:0;user-select:none}
+  .faq-section .wrap{position:relative;z-index:1}
+
+  .faq-search{max-width:560px;margin:0 auto 36px;position:relative}
+  .faq-search input{width:100%;padding:16px 22px 16px 52px;background:#fff;border:1px solid var(--line);font-family:'Cormorant Garamond',serif;font-style:italic;font-size:16px;color:var(--ink);outline:none;transition:all .25s}
+  .faq-search input::placeholder{color:var(--muted);font-style:italic}
+  .faq-search input:focus{border-color:var(--gold);box-shadow:0 0 0 3px rgba(212,175,55,.12)}
+  .faq-search svg{position:absolute;left:18px;top:50%;transform:translateY(-50%);width:20px;height:20px;stroke:var(--gold-d);fill:none;stroke-width:1.8;stroke-linecap:round;pointer-events:none}
+
+  .faq{max-width:820px;margin:0 auto}
+  .q{background:#fbf9f0;border:1px solid var(--line);margin-bottom:14px;transition:all .25s}
+  .q[open]{border-color:var(--gold);background:#fff;box-shadow:0 14px 30px rgba(8,23,41,.06)}
+  .q.hidden{display:none}
+  .q summary{list-style:none;padding:24px 28px;font-family:'Cormorant Garamond',serif;font-weight:500;font-size:21px;line-height:1.32;color:var(--ink);display:flex;justify-content:space-between;gap:18px;align-items:center;cursor:pointer;position:relative;padding-right:56px;transition:color .25s}
+  .q summary::-webkit-details-marker{display:none}
+  .q summary::before{content:"";position:absolute;right:32px;width:14px;height:1px;background:var(--gold-d);transition:all .3s;top:50%}
+  .q summary::after{content:"";position:absolute;right:38px;background:var(--gold-d);width:1px;height:14px;transition:all .3s;top:50%;margin-top:-7px}
+  .q[open] summary::after{transform:rotate(90deg);opacity:0}
+  .q[open] summary{color:var(--gold-d)}
+  .q[open] summary::before,.q[open] summary::after{background:var(--gold)}
+  .q-body{padding:0 28px 28px;font-family:'Inter',sans-serif;font-size:15px;color:var(--gray);line-height:1.78;font-weight:300}
+  .q-body strong{color:var(--ink-soft);font-weight:500}
+
+  @media(max-width:780px){
+    .faq-section{padding:96px 0}
+    .faq-search{margin-bottom:28px}
+    .faq-search input{padding:14px 20px 14px 46px;font-size:15px}
+    .faq-search svg{left:16px;width:18px;height:18px}
+    .q summary{padding:20px 56px 20px 22px;font-size:18px}
+    .q-body{padding:0 22px 22px;font-size:14.5px;line-height:1.72}
+  }
 </style>
 </head>
 <body data-auto-reveal="all" data-scroll-progress>
@@ -713,6 +800,7 @@
       <a href="#sobre">Quem Sou</a>
       <a href="#depoimentos">Depoimentos</a>
       <a href="#onde">Onde Atendo</a>
+      <a href="#faq">Dúvidas</a>
       <a href="#contato">Contato</a>
     </div>
     <a class="nav-cta" href="https://wa.me/5581984089609?text=Ol%C3%A1%2C%20Dr.%20Breno.%20Vim%20pelo%20site." target="_blank" rel="noopener">
@@ -787,6 +875,99 @@
         </div>
         <div class="office-photo-stamp">Atendo<br/>desde<br/>2018</div>
         <div class="office-photo-caption">Cabo de Sto. Agostinho · <span>PE</span></div>
+      </div>
+    </div>
+
+    <!-- Divisor ornamental -->
+    <div class="quiz-divider" aria-hidden="true"><span class="quiz-diamond"></span></div>
+
+    <!-- Quiz de Orientação -->
+    <div class="quiz-head" data-reveal="up">
+      <div class="shead-eye"><span>Orientação Rápida · Sem Custo</span></div>
+      <h2>Descubra em <em>30 segundos</em> se é o caso de procurar um advogado.</h2>
+      <p class="quiz-sub">Três perguntas rápidas. Se houver fundamento legal, te envio uma análise detalhada pelo WhatsApp — sem compromisso.</p>
+    </div>
+
+    <div class="quiz" id="quiz" data-reveal="up" data-delay="160">
+      <div class="quiz-progress" aria-hidden="true"></div>
+
+      <div class="quiz-step active" data-step="1">
+        <div class="quiz-step-num">Pergunta 1 de 3</div>
+        <h3>Qual área do Direito mais se aproxima do seu caso?</h3>
+        <div class="quiz-opts">
+          <button type="button" class="quiz-opt" data-next="2" data-key="categoria" data-value="civel">
+            <span class="quiz-opt-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></span>
+            Cível — contratos, cobranças, indenizações, imóveis
+          </button>
+          <button type="button" class="quiz-opt" data-next="2" data-key="categoria" data-value="previdenciario">
+            <span class="quiz-opt-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></span>
+            Previdenciário — aposentadoria, BPC, auxílio-doença, revisão
+          </button>
+          <button type="button" class="quiz-opt" data-next="2" data-key="categoria" data-value="trabalhista">
+            <span class="quiz-opt-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M8 2v4m8-4v4M3 10h18"/></svg></span>
+            Trabalhista — rescisão, horas extras, assédio, acidente
+          </button>
+          <button type="button" class="quiz-opt" data-next="2" data-key="categoria" data-value="sucessoes">
+            <span class="quiz-opt-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 21h18M6 18V9l6-5 6 5v9M10 18v-6h4v6"/></svg></span>
+            Sucessões — herança, inventário, testamento, partilha
+          </button>
+          <button type="button" class="quiz-opt" data-next="2" data-key="categoria" data-value="duvida">
+            <span class="quiz-opt-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></span>
+            Não tenho certeza — preciso de orientação
+          </button>
+        </div>
+      </div>
+
+      <div class="quiz-step" data-step="2">
+        <button type="button" class="quiz-back" data-prev="1">← Voltar</button>
+        <div class="quiz-step-num">Pergunta 2 de 3</div>
+        <h3>Há quanto tempo o problema aconteceu?</h3>
+        <div class="quiz-opts">
+          <button type="button" class="quiz-opt" data-next="3" data-key="tempo" data-value="recente">
+            <span class="quiz-opt-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+            Menos de 2 anos — recente
+          </button>
+          <button type="button" class="quiz-opt" data-next="3" data-key="tempo" data-value="medio">
+            <span class="quiz-opt-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+            Entre 2 e 5 anos
+          </button>
+          <button type="button" class="quiz-opt" data-next="3" data-key="tempo" data-value="antigo">
+            <span class="quiz-opt-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 2"/></svg></span>
+            Mais de 5 anos — preciso verificar prescrição
+          </button>
+        </div>
+      </div>
+
+      <div class="quiz-step" data-step="3">
+        <button type="button" class="quiz-back" data-prev="2">← Voltar</button>
+        <div class="quiz-step-num">Pergunta 3 de 3</div>
+        <h3>Qual o seu nível de urgência?</h3>
+        <div class="quiz-opts">
+          <button type="button" class="quiz-opt" data-next="result" data-key="urgencia" data-value="agora">
+            <span class="quiz-opt-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg></span>
+            Urgente — preciso de orientação hoje
+          </button>
+          <button type="button" class="quiz-opt" data-next="result" data-key="urgencia" data-value="semana">
+            <span class="quiz-opt-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg></span>
+            Nos próximos dias
+          </button>
+          <button type="button" class="quiz-opt" data-next="result" data-key="urgencia" data-value="estudo">
+            <span class="quiz-opt-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></span>
+            Só quero entender melhor
+          </button>
+        </div>
+      </div>
+
+      <div class="quiz-result" data-step="result">
+        <div class="quiz-result-head">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M9 12l2 2 4-4"/></svg>
+          <h3>Seu caso <em>merece análise</em>.</h3>
+        </div>
+        <p id="quiz-result-text">Com base nas suas respostas, há fundamento para analisarmos seu caso com calma. Envie uma mensagem e faço a análise detalhada sem compromisso.</p>
+        <a id="quiz-result-cta" class="quiz-result-cta" href="https://wa.me/5581984089609" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24"><path d="M17.47 14.38c-.3-.15-1.77-.87-2.04-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.16-.17.2-.35.22-.65.07-.3-.15-1.26-.47-2.4-1.49-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51-.17-.01-.37-.01-.57-.01-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.49 0 1.47 1.07 2.88 1.22 3.08.15.2 2.1 3.21 5.1 4.5.71.31 1.27.49 1.7.63.71.23 1.36.2 1.87.12.57-.09 1.77-.72 2.02-1.42.25-.7.25-1.29.17-1.42-.07-.12-.27-.2-.57-.35z"/><path d="M12 2.04c-5.5 0-9.96 4.46-9.96 9.96 0 1.75.46 3.46 1.33 4.96L2 22l5.15-1.35c1.45.79 3.09 1.21 4.85 1.21 5.5 0 9.96-4.46 9.96-9.96S17.5 2.04 12 2.04z"/></svg>
+          Receber análise pelo WhatsApp
+        </a>
       </div>
     </div>
   </div>
@@ -1023,6 +1204,54 @@
   </div>
 </section>
 
+<!-- ============= FAQ ============= -->
+<section class="faq-section" id="faq">
+  <img class="faq-watermark" src="assets/seal-v3-gold.png" alt="" aria-hidden="true" />
+  <div class="wrap">
+    <div class="shead" data-reveal="up">
+      <div class="shead-eye"><span>Dúvidas Frequentes</span></div>
+      <h2>As perguntas que <em>sempre recebo</em>.</h2>
+      <p class="shead-sub">Se a sua dúvida não estiver aqui, mande pelo WhatsApp — respondo pessoalmente em até 2 horas úteis.</p>
+    </div>
+
+    <div class="faq-search" data-reveal="up" data-delay="100">
+      <svg viewBox="0 0 24 24" fill="none"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+      <input id="faq-q" type="text" placeholder="Procurar por palavra-chave (ex: prazo, honorários, inventário)…" aria-label="Buscar nas perguntas frequentes" />
+    </div>
+
+    <div class="faq" data-reveal="fade" data-stagger="> .q" data-stagger-step="80">
+      <details class="q">
+        <summary>A primeira consulta é realmente gratuita?</summary>
+        <div class="q-body">Sim. A análise inicial do seu caso — por WhatsApp, telefone ou videoconferência — não tem custo. Serve para eu entender o que aconteceu, verificar documentos e dizer se há fundamento legal para agir. Você só contrata se quiser avançar, com proposta de honorários formal antes de qualquer assinatura.</div>
+      </details>
+      <details class="q">
+        <summary>Quais áreas do Direito o escritório atua?</summary>
+        <div class="q-body">Atendo em quatro frentes: <strong>Direito Cível</strong> (contratos, cobranças, indenizações, consumidor, imóveis), <strong>Previdenciário</strong> (aposentadorias, BPC, auxílio-doença, revisões do INSS), <strong>Trabalhista</strong> (rescisões, horas extras, assédio, acidente) e <strong>Sucessões/Herança</strong> (inventário, partilha, testamento, planejamento sucessório). Se seu caso se encaixa em alguma dessas áreas, podemos conversar.</div>
+      </details>
+      <details class="q">
+        <summary>Quanto custa contratar o escritório?</summary>
+        <div class="q-body">Os honorários são combinados por escrito antes de qualquer trabalho — sem surpresa. Para causas trabalhistas e previdenciárias, é comum contrato por êxito (percentual sobre o que você receber). Para causas cíveis e sucessões, costuma ser valor fixo ou percentual, dependendo do tipo de ação. Sempre te passo as opções antes de assinar.</div>
+      </details>
+      <details class="q">
+        <summary>Você atende fora de Cabo de Santo Agostinho?</summary>
+        <div class="q-body">Atendo presencialmente em Cabo de Santo Agostinho/PE, Recife e Região Metropolitana do Recife (Jaboatão, Olinda, Paulista, Porto de Galinhas, Ipojuca) com agendamento prévio. Para outras cidades de Pernambuco e do Brasil, atendo 100% online por WhatsApp, videoconferência e envio de documentos por PDF — com a mesma qualidade do presencial.</div>
+      </details>
+      <details class="q">
+        <summary>Quanto tempo demora um processo?</summary>
+        <div class="q-body">Depende muito da área e da complexidade. Processos trabalhistas costumam levar de 6 a 18 meses; previdenciários, de 6 a 24 meses; cíveis simples, de 6 a 12 meses; inventários extrajudiciais podem ser concluídos em semanas, os judiciais em meses. No início de cada caso te passo uma projeção realista com base no que a Vara competente costuma entregar.</div>
+      </details>
+      <details class="q">
+        <summary>Quais documentos preciso ter para uma consulta inicial?</summary>
+        <div class="q-body">O ideal é trazer o que tiver à mão relacionado ao caso: contratos, cobranças, notificações, carteira de trabalho, holerites, certidões, decisões anteriores, prints de conversa etc. Mas você pode começar só contando a história por WhatsApp — a gente vê juntos quais documentos são importantes conforme a conversa avança.</div>
+      </details>
+      <details class="q">
+        <summary>Como sei se meu caso ainda está dentro do prazo?</summary>
+        <div class="q-body">Cada tipo de caso tem um prazo diferente — prescrição trabalhista é de 5 anos (com limite de 2 anos após o fim do contrato), cível varia de 3 a 10 anos dependendo da ação, previdenciário depende do benefício, sucessões têm prazos específicos por ato. Mande a data dos fatos pelo WhatsApp que em 2 horas úteis te digo se ainda está dentro.</div>
+      </details>
+    </div>
+  </div>
+</section>
+
 <!-- ============= CONTATO ============= -->
 <section class="contact" id="contato">
   <div class="wrap">
@@ -1124,6 +1353,7 @@
           <a href="#sobre">Quem Sou</a>
           <a href="#depoimentos">Depoimentos</a>
           <a href="#onde">Onde Atendo</a>
+          <a href="#faq">Dúvidas Frequentes</a>
           <a href="#contato">Contato</a>
         </div>
       </div>
@@ -1211,6 +1441,80 @@
     window.open('https://wa.me/5581984089609?text=' + text, '_blank', 'noopener');
     return false;
   }
+
+  // Quiz interativo
+  (function(){
+    var quiz = document.getElementById('quiz');
+    if(!quiz) return;
+    var state = {categoria:null, tempo:null, urgencia:null};
+    var steps = quiz.querySelectorAll('[data-step]');
+    var prog = quiz.querySelector('.quiz-progress');
+
+    var catMap = {
+      civel: 'Questões cíveis (contratos, indenizações, consumidor) costumam ter prazos de prescrição entre 3 e 10 anos. Posso analisar gratuitamente se há fundamento.',
+      previdenciario: 'Benefícios do INSS negados podem ser concedidos pela via judicial — com atrasados desde a data do requerimento. Aposentadorias, BPC e auxílios também podem ser revisados.',
+      trabalhista: 'O prazo trabalhista é de até 5 anos retroativos, limitado a 2 anos após o fim do contrato. Horas extras, rescisão indireta, assédio e acidente geram direitos próprios.',
+      sucessoes: 'Inventários podem ser feitos judicial ou extrajudicialmente (em cartório), com ou sem testamento. Posso orientar qual o caminho mais rápido e econômico para o seu caso.',
+      duvida: 'Mesmo sem saber qual a área exata, posso orientar na primeira conversa — sem custo. Muitos casos envolvem mais de uma área, e eu indico o caminho.'
+    };
+    var tempoMap = {
+      recente: 'Seu caso está dentro do prazo — podemos agir quando quiser.',
+      medio: 'Ainda há prazo para a maior parte dos pedidos. Vamos confirmar.',
+      antigo: 'Precisamos verificar a prescrição de cada pedido, mas há ações e revisões que admitem prazos mais longos.'
+    };
+    var urgMap = {
+      agora: 'Prioridade total — te atendo hoje mesmo.',
+      semana: 'Agendo nos próximos dias conforme sua disponibilidade.',
+      estudo: 'Tranquilo — faço a análise sem compromisso e você decide depois.'
+    };
+
+    function buildResult(){
+      var cat = state.categoria, tempo = state.tempo, urg = state.urgencia;
+      var txt = (catMap[cat] || 'Há fundamento para analisarmos seu caso com calma.') +
+                ' ' + (tempoMap[tempo] || '') + ' ' + (urgMap[urg] || '');
+      var out = document.getElementById('quiz-result-text');
+      if(out) out.textContent = txt;
+      var cta = document.getElementById('quiz-result-cta');
+      if(cta){
+        var msg = 'Olá, Dr. Breno. Fiz a orientação rápida do site (área: '+cat+', há: '+tempo+', urgência: '+urg+') e gostaria da análise do meu caso.';
+        cta.href = 'https://wa.me/5581984089609?text=' + encodeURIComponent(msg);
+      }
+    }
+
+    function goTo(step){
+      steps.forEach(function(s){ s.classList.remove('active'); });
+      var target = quiz.querySelector('[data-step="'+step+'"]');
+      if(target) target.classList.add('active');
+      var pmap = {1:.33, 2:.66, 3:1, result:1};
+      if(prog) prog.style.setProperty('--qp', pmap[step]);
+      if(step === 'result') buildResult();
+    }
+
+    quiz.addEventListener('click', function(e){
+      var opt = e.target.closest('.quiz-opt');
+      if(opt){
+        var key = opt.dataset.key, val = opt.dataset.value;
+        if(key) state[key] = val;
+        goTo(opt.dataset.next);
+        return;
+      }
+      var back = e.target.closest('.quiz-back');
+      if(back) goTo(back.dataset.prev);
+    });
+  })();
+
+  // FAQ search filter
+  (function(){
+    var faqInput = document.getElementById('faq-q');
+    if(!faqInput) return;
+    faqInput.addEventListener('input', function(){
+      var q = faqInput.value.trim().toLowerCase();
+      document.querySelectorAll('.faq .q').forEach(function(el){
+        var text = el.textContent.toLowerCase();
+        el.classList.toggle('hidden', q && text.indexOf(q) === -1);
+      });
+    });
+  })();
 </script>
 
 </body>
