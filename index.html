@@ -881,26 +881,32 @@
   .area-card{isolation:isolate}
   .area-photo{
     position:absolute;bottom:0;right:0;
-    width:62%;height:68%;
+    width:72%;height:78%;
     object-fit:cover;object-position:center;
-    opacity:.20;mix-blend-mode:multiply;
-    -webkit-mask-image:radial-gradient(ellipse 95% 90% at bottom right, #000 25%, transparent 75%);
-    mask-image:radial-gradient(ellipse 95% 90% at bottom right, #000 25%, transparent 75%);
+    opacity:.45;mix-blend-mode:multiply;
+    -webkit-mask-image:radial-gradient(ellipse 105% 100% at bottom right, #000 35%, transparent 88%);
+    mask-image:radial-gradient(ellipse 105% 100% at bottom right, #000 35%, transparent 88%);
     pointer-events:none;z-index:0;
-    transition:opacity .5s ease, transform .9s cubic-bezier(.22,.8,.24,1);
+    transition:opacity .5s ease, transform .9s cubic-bezier(.22,.8,.24,1), filter .5s ease;
     transform:scale(1.02);
-    filter:saturate(.9) sepia(.18);
+    filter:saturate(.95) sepia(.12) contrast(1.05);
   }
-  .area-card:hover .area-photo{opacity:.32;transform:scale(1.06)}
+  .area-card:hover .area-photo{opacity:.62;transform:scale(1.06);filter:saturate(1) sepia(.06) contrast(1.08)}
   .area-card > .area-num,
   .area-card > .area-icon,
   .area-card > h3,
   .area-card > p,
   .area-card > .area-tags,
   .area-card > .area-arrow{position:relative;z-index:1}
+  /* aumenta legibilidade do texto sobre a foto */
+  .area-card p{
+    background:linear-gradient(90deg, rgba(251,249,240,.95) 0%, rgba(251,249,240,.85) 60%, rgba(251,249,240,.6) 100%);
+    padding:2px 6px 2px 0;border-radius:2px;
+  }
 
   @media(max-width:780px){
-    .area-photo{width:60%;height:55%;opacity:.16}
+    .area-photo{width:70%;height:68%;opacity:.36}
+    .area-card:hover .area-photo{opacity:.52}
   }
 
   /* ═══════════════════════════════════════════════════════════
@@ -1034,7 +1040,7 @@
       <a href="#faq">Dúvidas</a>
       <a href="#contato">Contato</a>
     </div>
-    <a class="nav-cta" href="https://wa.me/5581984089609?text=Ol%C3%A1%2C%20Dr.%20Breno.%20Vim%20pelo%20site." target="_blank" rel="noopener">
+    <a class="nav-cta" href="https://wa.me/558184089609?text=Ol%C3%A1%2C%20Dr.%20Breno.%20Vim%20pelo%20site." target="_blank" rel="noopener">
       <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.5 14.4c-.3-.1-1.6-.8-1.9-.9-.3-.1-.4-.1-.6.1s-.7.9-.9 1.1c-.2.2-.3.2-.6.1-.3-.1-1.2-.5-2.3-1.4-.8-.7-1.4-1.6-1.6-1.9-.2-.3 0-.4.1-.6.1-.1.3-.3.4-.5.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5 0-.1-.6-1.5-.9-2.1-.2-.5-.5-.5-.6-.5h-.5c-.2 0-.5.1-.7.4-.2.3-.9 1-.9 2.4 0 1.4 1 2.8 1.1 3 .1.2 1.9 3 4.7 4.2.7.3 1.2.4 1.6.6.7.2 1.3.2 1.8.1.5-.1 1.6-.7 1.9-1.3.2-.6.2-1.2.2-1.3 0-.1-.2-.2-.5-.3M12 21.7c-1.7 0-3.3-.4-4.7-1.3l-.3-.2-3.5.9.9-3.4-.2-.4c-.9-1.5-1.4-3.2-1.4-4.9 0-5.1 4.2-9.3 9.2-9.3 2.5 0 4.8 1 6.6 2.7 1.7 1.8 2.7 4.1 2.7 6.6-.1 5.1-4.2 9.3-9.3 9.3M20 4c-2.1-2.1-5-3.3-8-3.3-6.2 0-11.3 5.1-11.3 11.3 0 2 .5 3.9 1.5 5.6L.6 23.4l5.9-1.5c1.6.9 3.5 1.4 5.4 1.4 6.2 0 11.3-5.1 11.3-11.3 0-3-1.2-5.9-3.2-8z"/></svg>
       WhatsApp
     </a>
@@ -1207,14 +1213,14 @@
           <span class="portrait-corner tr" aria-hidden="true"><svg viewBox="0 0 36 36"><path d="M3 14 L3 3 L14 3"/><path d="M3 8 L8 3"/></svg></span>
           <span class="portrait-corner bl" aria-hidden="true"><svg viewBox="0 0 36 36"><path d="M3 14 L3 3 L14 3"/><path d="M3 8 L8 3"/></svg></span>
           <span class="portrait-corner br" aria-hidden="true"><svg viewBox="0 0 36 36"><path d="M3 14 L3 3 L14 3"/><path d="M3 8 L8 3"/></svg></span>
-          <span class="portrait-plaque">Dr. Breno Lima · OAB/PE</span>
+          <span class="portrait-plaque">Dr. Breno Lima · OAB/PE 56.517</span>
         </div>
       </div>
       <div class="about-text about-text-integrated" data-reveal="right" data-delay="160">
         <div class="shead-eye"><span>Quem Sou</span></div>
         <h2>Dr. <em>Breno Lima</em>, advogado.</h2>
         <p class="lead">"Acredito que o cuidado de uma causa começa antes do processo — começa quando o cliente sente que foi, finalmente, ouvido."</p>
-        <p>Sou advogado inscrito na <strong>OAB/PE</strong>, com formação em Direito e prática construída na rotina de quem decidiu não terceirizar nenhum atendimento. Atuo nas frentes Cível, Previdenciária, Trabalhista e em causas de Sucessões — áreas que me ensinaram que cada autos esconde, antes de tudo, uma vida concreta a ser entendida.</p>
+        <p>Sou advogado inscrito na <strong>OAB/PE 56.517</strong>, com formação em Direito e prática construída na rotina de quem decidiu não terceirizar nenhum atendimento. Atuo nas frentes Cível, Previdenciária, Trabalhista e em causas de Sucessões — áreas que me ensinaram que cada autos esconde, antes de tudo, uma vida concreta a ser entendida.</p>
         <p>Meu compromisso é simples: receber cada cliente pessoalmente, estudar o caso até onde o caso pedir, e responder com clareza — mesmo quando a resposta é difícil. Sigilo, presença e estratégia são princípios não negociáveis aqui.</p>
       </div>
     </div>
@@ -1420,7 +1426,7 @@
           <h3>Seu caso <em>merece análise</em>.</h3>
         </div>
         <p id="quiz-result-text">Com base nas suas respostas, há fundamento para analisarmos seu caso com calma. Envie uma mensagem e faço a análise detalhada sem compromisso.</p>
-        <a id="quiz-result-cta" class="quiz-result-cta" href="https://wa.me/5581984089609" target="_blank" rel="noopener">
+        <a id="quiz-result-cta" class="quiz-result-cta" href="https://wa.me/558184089609" target="_blank" rel="noopener">
           <svg viewBox="0 0 24 24"><path d="M17.47 14.38c-.3-.15-1.77-.87-2.04-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.16-.17.2-.35.22-.65.07-.3-.15-1.26-.47-2.4-1.49-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51-.17-.01-.37-.01-.57-.01-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.49 0 1.47 1.07 2.88 1.22 3.08.15.2 2.1 3.21 5.1 4.5.71.31 1.27.49 1.7.63.71.23 1.36.2 1.87.12.57-.09 1.77-.72 2.02-1.42.25-.7.25-1.29.17-1.42-.07-.12-.27-.2-.57-.35z"/><path d="M12 2.04c-5.5 0-9.96 4.46-9.96 9.96 0 1.75.46 3.46 1.33 4.96L2 22l5.15-1.35c1.45.79 3.09 1.21 4.85 1.21 5.5 0 9.96-4.46 9.96-9.96S17.5 2.04 12 2.04z"/></svg>
           Receber análise pelo WhatsApp
         </a>
@@ -1492,11 +1498,11 @@
         <h3>Três caminhos <em>para começar</em>.</h3>
         <p>WhatsApp para urgência. E-mail para documentos. Formulário ao lado, se preferir um contato mais formal antes da primeira conversa. Qualquer porta funciona.</p>
         <div class="contact-channels">
-          <a class="channel" href="https://wa.me/5581984089609?text=Ol%C3%A1%2C%20Dr.%20Breno.%20Vim%20pelo%20site." target="_blank" rel="noopener">
+          <a class="channel" href="https://wa.me/558184089609?text=Ol%C3%A1%2C%20Dr.%20Breno.%20Vim%20pelo%20site." target="_blank" rel="noopener">
             <div class="channel-icon"><svg viewBox="0 0 24 24"><path d="M17.5 14.4c-.3-.1-1.6-.8-1.9-.9-.3-.1-.4-.1-.6.1s-.7.9-.9 1.1c-.2.2-.3.2-.6.1-.3-.1-1.2-.5-2.3-1.4-.8-.7-1.4-1.6-1.6-1.9-.2-.3 0-.4.1-.6.1-.1.3-.3.4-.5.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5 0-.1-.6-1.5-.9-2.1-.2-.5-.5-.5-.6-.5h-.5c-.2 0-.5.1-.7.4-.2.3-.9 1-.9 2.4 0 1.4 1 2.8 1.1 3 .1.2 1.9 3 4.7 4.2.7.3 1.2.4 1.6.6.7.2 1.3.2 1.8.1.5-.1 1.6-.7 1.9-1.3.2-.6.2-1.2.2-1.3 0-.1-.2-.2-.5-.3M12 21.7c-1.7 0-3.3-.4-4.7-1.3l-.3-.2-3.5.9.9-3.4-.2-.4c-.9-1.5-1.4-3.2-1.4-4.9 0-5.1 4.2-9.3 9.2-9.3 2.5 0 4.8 1 6.6 2.7 1.7 1.8 2.7 4.1 2.7 6.6-.1 5.1-4.2 9.3-9.3 9.3M20 4c-2.1-2.1-5-3.3-8-3.3-6.2 0-11.3 5.1-11.3 11.3 0 2 .5 3.9 1.5 5.6L.6 23.4l5.9-1.5c1.6.9 3.5 1.4 5.4 1.4 6.2 0 11.3-5.1 11.3-11.3 0-3-1.2-5.9-3.2-8z" fill="currentColor" stroke="none"/></svg></div>
             <div class="channel-meta">
               <div class="channel-label">WhatsApp · Análise gratuita</div>
-              <div class="channel-value">(81) 98408-9609 <em>· resposta em até 2h úteis<sup class="aster">*</sup></em></div>
+              <div class="channel-value">(81) 8408-9609 <em>· resposta em até 2h úteis<sup class="aster">*</sup></em></div>
             </div>
           </a>
           <a class="channel" href="mailto:adv.brenolima@gmail.com">
@@ -1506,13 +1512,13 @@
               <div class="channel-value">adv.brenolima@gmail.com</div>
             </div>
           </a>
-          <div class="channel">
+          <a class="channel" href="https://www.google.com/maps/search/?api=1&query=Av.+Pref.+Diomedes+Ferreira+de+Melo+105%2C+Ponte+dos+Carvalhos%2C+Cabo+de+Santo+Agostinho%2FPE" target="_blank" rel="noopener">
             <div class="channel-icon"><svg viewBox="0 0 24 24"><path d="M12 2 C7 2 4 5 4 10 C4 15 12 22 12 22 C12 22 20 15 20 10 C20 5 17 2 12 2 Z"/><circle cx="12" cy="10" r="3"/></svg></div>
             <div class="channel-meta">
-              <div class="channel-label">Sede e Atendimento Presencial</div>
-              <div class="channel-value">Cabo de Santo Agostinho/PE e Recife <em>· endereço enviado após agendamento</em></div>
+              <div class="channel-label">Sede · Atendimento Presencial</div>
+              <div class="channel-value">Av. Pref. Diomedes Ferreira de Melo, 105 a · 1º andar <em>· Ponte dos Carvalhos, Cabo de Santo Agostinho/PE</em></div>
             </div>
-          </div>
+          </a>
           <div class="channel">
             <div class="channel-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M2 12 L22 12"/><path d="M12 2 C15 6 15 18 12 22 C9 18 9 6 12 2"/></svg></div>
             <div class="channel-meta">
@@ -1598,11 +1604,12 @@
         <h4>Contato</h4>
         <div class="footer-contact">
           <strong>WhatsApp</strong>
-          <a href="https://wa.me/5581984089609" target="_blank" rel="noopener">(81) 98408-9609</a><br/>
+          <a href="https://wa.me/558184089609" target="_blank" rel="noopener">(81) 8408-9609</a><br/>
           <strong style="margin-top:14px">E-mail</strong>
           <a href="mailto:adv.brenolima@gmail.com">adv.brenolima@gmail.com</a><br/>
           <strong style="margin-top:14px">Sede</strong>
-          Cabo de Santo Agostinho · PE
+          Av. Pref. Diomedes Ferreira de Melo, 105 a · 1º andar<br/>
+          Ponte dos Carvalhos · Cabo de Santo Agostinho/PE
         </div>
       </div>
     </div>
@@ -1611,7 +1618,7 @@
     </div>
     <div class="footer-bottom">
       <div class="footer-bottom-left">
-        © <span id="footerYear">2026</span> Breno Lima Advocacia · OAB/PE · Todos os direitos reservados
+        © <span id="footerYear">2026</span> Breno Lima Advocacia · OAB/PE 56.517 · Todos os direitos reservados
       </div>
       <div class="footer-bottom-right">
         <a href="https://vejaseusite.github.io" target="_blank" rel="noopener">Site por VejaSeuSIte</a>
@@ -1621,7 +1628,7 @@
 </footer>
 
 <!-- ============= WHATSAPP FAB ============= -->
-<a class="wa-fab" href="https://wa.me/5581984089609?text=Ol%C3%A1%2C%20Dr.%20Breno.%20Vim%20pelo%20site." target="_blank" rel="noopener" aria-label="Abrir WhatsApp">
+<a class="wa-fab" href="https://wa.me/558184089609?text=Ol%C3%A1%2C%20Dr.%20Breno.%20Vim%20pelo%20site." target="_blank" rel="noopener" aria-label="Abrir WhatsApp">
   <span class="wa-fab-label">Falar agora</span>
   <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.5 14.4c-.3-.1-1.6-.8-1.9-.9-.3-.1-.4-.1-.6.1s-.7.9-.9 1.1c-.2.2-.3.2-.6.1-.3-.1-1.2-.5-2.3-1.4-.8-.7-1.4-1.6-1.6-1.9-.2-.3 0-.4.1-.6.1-.1.3-.3.4-.5.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5 0-.1-.6-1.5-.9-2.1-.2-.5-.5-.5-.6-.5h-.5c-.2 0-.5.1-.7.4-.2.3-.9 1-.9 2.4 0 1.4 1 2.8 1.1 3 .1.2 1.9 3 4.7 4.2.7.3 1.2.4 1.6.6.7.2 1.3.2 1.8.1.5-.1 1.6-.7 1.9-1.3.2-.6.2-1.2.2-1.3 0-.1-.2-.2-.5-.3M12 21.7c-1.7 0-3.3-.4-4.7-1.3l-.3-.2-3.5.9.9-3.4-.2-.4c-.9-1.5-1.4-3.2-1.4-4.9 0-5.1 4.2-9.3 9.2-9.3 2.5 0 4.8 1 6.6 2.7 1.7 1.8 2.7 4.1 2.7 6.6-.1 5.1-4.2 9.3-9.3 9.3M20 4c-2.1-2.1-5-3.3-8-3.3-6.2 0-11.3 5.1-11.3 11.3 0 2 .5 3.9 1.5 5.6L.6 23.4l5.9-1.5c1.6.9 3.5 1.4 5.4 1.4 6.2 0 11.3-5.1 11.3-11.3 0-3-1.2-5.9-3.2-8z"/></svg>
 </a>
@@ -1678,7 +1685,7 @@
       '*Telefone:* ' + encodeURIComponent(phone) + '%0A' +
       '*Área:* ' + encodeURIComponent(area) + '%0A%0A' +
       '*Mensagem:*%0A' + encodeURIComponent(msg);
-    window.open('https://wa.me/5581984089609?text=' + text, '_blank', 'noopener');
+    window.open('https://wa.me/558184089609?text=' + text, '_blank', 'noopener');
     return false;
   }
 
@@ -1717,7 +1724,7 @@
       var cta = document.getElementById('quiz-result-cta');
       if(cta){
         var msg = 'Olá, Dr. Breno. Fiz a orientação rápida do site (área: '+cat+', há: '+tempo+', urgência: '+urg+') e gostaria da análise do meu caso.';
-        cta.href = 'https://wa.me/5581984089609?text=' + encodeURIComponent(msg);
+        cta.href = 'https://wa.me/558184089609?text=' + encodeURIComponent(msg);
       }
     }
 
