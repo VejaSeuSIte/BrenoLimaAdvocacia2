@@ -803,76 +803,26 @@
   .channel-value{font-weight:500;font-size:19px}
 
   /* ═══════════════════════════════════════════════════════════
-     WORDMARK — Opção 12 (Archivo Institucional) como texto
+     WORDMARK — Empiric Roman PNG (com fundo transparente)
      ═══════════════════════════════════════════════════════════ */
-  .wordmark-text{
-    display:inline-flex;flex-direction:column;align-items:center;
-    line-height:1;text-align:center;color:var(--gold);
-  }
-  .wordmark-text .wm-top{
-    font-family:'Archivo',sans-serif;font-weight:700;
-    letter-spacing:.15em;text-transform:uppercase;line-height:1;
-    color:var(--gold);
-  }
-  .wordmark-text .wm-bot{
-    font-family:'Archivo',sans-serif;font-weight:400;
-    letter-spacing:.50em;text-transform:uppercase;line-height:1;
-    color:var(--gold);margin-left:.50em;
-  }
-  .wordmark-text .wm-rule{
-    display:flex;align-items:center;gap:8px;justify-content:center;
-    margin:8px 0;color:var(--gold);
-  }
-  .wordmark-text .wm-rule::before,.wordmark-text .wm-rule::after{
-    content:"";height:1px;background:currentColor;flex:0 0 28px;opacity:.55;
-  }
-  .wordmark-text .wm-rule .diamond{
-    width:4px;height:4px;transform:rotate(45deg);background:currentColor;opacity:.75;
-  }
-
-  /* nav (desktop) */
-  .brand .wordmark-text{height:auto;align-items:flex-start}
-  .brand .wordmark-text .wm-top{font-size:15px}
-  .brand .wordmark-text .wm-bot{font-size:8.5px;letter-spacing:.42em;margin-left:.42em}
-  .brand .wordmark-text .wm-rule{margin:4px 0;justify-content:flex-start}
-  .brand .wordmark-text .wm-rule::before{flex:0 0 22px}
-  .brand .wordmark-text .wm-rule::after{display:none}
-
-  /* hero (grandão) */
-  .hero-wordmark.wordmark-text{max-width:none;width:auto;height:auto;
-    filter:drop-shadow(0 12px 32px rgba(0,0,0,.5))}
-  .hero-wordmark.wordmark-text .wm-top{font-size:42px;color:var(--gold-l)}
-  .hero-wordmark.wordmark-text .wm-bot{font-size:19px;color:var(--gold-l)}
-  .hero-wordmark.wordmark-text .wm-rule{margin:14px 0;color:var(--gold-l)}
-  .hero-wordmark.wordmark-text .wm-rule::before,
-  .hero-wordmark.wordmark-text .wm-rule::after{flex:0 0 60px}
+  /* hero: PNG centralizado, dimensionado pelo h1 */
+  .hero-wordmark{display:flex;align-items:center;justify-content:center;
+    margin:0;padding:0}
+  .hero-wordmark .hero-wordmark-img{display:block;width:100%;height:auto;
+    max-width:560px;object-fit:contain;
+    filter:drop-shadow(0 12px 32px rgba(0,0,0,.55))}
 
   /* footer */
-  .footer-brand-wm.wordmark-text{height:auto;width:auto;align-items:flex-start}
-  .footer-brand-wm.wordmark-text .wm-top{font-size:13px}
-  .footer-brand-wm.wordmark-text .wm-bot{font-size:7.5px;letter-spacing:.42em;margin-left:.42em}
-  .footer-brand-wm.wordmark-text .wm-rule{margin:4px 0;justify-content:flex-start}
-  .footer-brand-wm.wordmark-text .wm-rule::before{flex:0 0 18px}
-  .footer-brand-wm.wordmark-text .wm-rule::after{display:none}
+  .footer-brand-wm{height:32px;width:auto;object-fit:contain;display:block}
 
-  @media(max-width:1020px){
-    .brand .wordmark-text .wm-top{font-size:13px}
-    .brand .wordmark-text .wm-bot{font-size:7.5px}
-  }
   @media(max-width:900px){
-    .hero-wordmark.wordmark-text .wm-top{font-size:30px}
-    .hero-wordmark.wordmark-text .wm-bot{font-size:13px}
-    .hero-wordmark.wordmark-text .wm-rule::before,
-    .hero-wordmark.wordmark-text .wm-rule::after{flex:0 0 40px}
+    .hero-wordmark .hero-wordmark-img{max-width:320px}
   }
   @media(max-width:780px){
-    .hero-wordmark.wordmark-text .wm-top{font-size:26px}
-    .hero-wordmark.wordmark-text .wm-bot{font-size:12px}
+    .hero-wordmark .hero-wordmark-img{max-width:280px}
   }
   @media(max-width:480px){
-    .brand .wordmark-text{display:none}
-    .hero-wordmark.wordmark-text .wm-top{font-size:22px}
-    .hero-wordmark.wordmark-text .wm-bot{font-size:10px}
+    .hero-wordmark .hero-wordmark-img{max-width:240px}
   }
 
   /* ═══════════════════════════════════════════════════════════
@@ -939,7 +889,7 @@
     pointer-events:none;z-index:2;
   }
   .portrait-photo{
-    width:100%;height:100%;object-fit:cover;object-position:center 18%;
+    width:100%;height:100%;object-fit:cover;object-position:center 22%;
     display:block;
     filter:saturate(.92) contrast(1.05);
   }
@@ -1018,11 +968,7 @@
   <div class="nav-inner">
     <a href="#top" class="brand" aria-label="Breno Lima Advocacia">
       <img class="brand-seal" src="assets/seal-v3-gold.png" alt="Selo Breno Lima Advocacia" width="54" height="54" />
-      <span class="brand-wordmark wordmark-text" aria-hidden="true">
-        <span class="wm-top">Breno&nbsp;Lima</span>
-        <span class="wm-rule"><span class="diamond"></span></span>
-        <span class="wm-bot">Advocacia</span>
-      </span>
+      <img class="brand-wordmark" src="assets/wordmark-empiric.png" alt="Breno Lima Advocacia" />
     </a>
     <button class="nav-burger" aria-label="Abrir menu" aria-expanded="false" aria-controls="nav-links-menu" id="navBurger">
       <svg viewBox="0 0 26 26" aria-hidden="true">
@@ -1064,10 +1010,8 @@
   <div class="hero-logo">
     <img class="hero-seal" src="assets/seal-v3-gold.png" alt="Selo heráldico Breno Lima Advocacia" width="280" height="280" fetchpriority="high" />
     <div class="hero-divider" aria-hidden="true"></div>
-    <h1 class="hero-wordmark wordmark-text">
-      <span class="wm-top">Breno&nbsp;Lima</span>
-      <span class="wm-rule" aria-hidden="true"><span class="diamond"></span></span>
-      <span class="wm-bot">Advocacia</span>
+    <h1 class="hero-wordmark">
+      <img class="hero-wordmark-img" src="assets/wordmark-empiric.png" alt="Breno Lima Advocacia" />
     </h1>
   </div>
 
@@ -1208,12 +1152,12 @@
     <div class="about-grid portrait-layout">
       <div class="about-portrait" data-reveal="left">
         <div class="portrait-frame">
-          <img class="portrait-photo" src="assets/breno-3-cutout.png" alt="Dr. Breno Lima — Advogado" loading="lazy" />
+          <img class="portrait-photo" src="assets/breno-portrait.jpg" alt="Dr. Breno Lima — Advogado" loading="lazy" />
           <span class="portrait-corner tl" aria-hidden="true"><svg viewBox="0 0 36 36"><path d="M3 14 L3 3 L14 3"/><path d="M3 8 L8 3"/></svg></span>
           <span class="portrait-corner tr" aria-hidden="true"><svg viewBox="0 0 36 36"><path d="M3 14 L3 3 L14 3"/><path d="M3 8 L8 3"/></svg></span>
           <span class="portrait-corner bl" aria-hidden="true"><svg viewBox="0 0 36 36"><path d="M3 14 L3 3 L14 3"/><path d="M3 8 L8 3"/></svg></span>
           <span class="portrait-corner br" aria-hidden="true"><svg viewBox="0 0 36 36"><path d="M3 14 L3 3 L14 3"/><path d="M3 8 L8 3"/></svg></span>
-          <span class="portrait-plaque">Dr. Breno Lima · OAB/PE 56.517</span>
+          <span class="portrait-plaque">Dr. Breno Lima · Sócio Fundador</span>
         </div>
       </div>
       <div class="about-text about-text-integrated" data-reveal="right" data-delay="160">
@@ -1580,11 +1524,7 @@
       <div>
         <div class="footer-brand">
           <img src="assets/seal-v3-gold.png" alt="" width="54" height="54" />
-          <span class="footer-brand-wm wordmark-text" aria-hidden="true">
-            <span class="wm-top">Breno&nbsp;Lima</span>
-            <span class="wm-rule"><span class="diamond"></span></span>
-            <span class="wm-bot">Advocacia</span>
-          </span>
+          <img class="footer-brand-wm" src="assets/wordmark-empiric.png" alt="Breno Lima Advocacia" />
         </div>
         <div class="footer-tag">Atendimento direto, análise minuciosa e cuidado artesanal — para causas Cíveis, Previdenciárias, Trabalhistas e de Sucessões.</div>
       </div>
